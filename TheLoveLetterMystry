@@ -1,0 +1,38 @@
+package contest;
+
+import java.util.Scanner;
+
+public class Contest 
+{
+    public static void main(String[] args) 
+    {
+        
+       Scanner input = new Scanner(System.in);
+
+		int numTestCases = input.nextInt();
+                if(numTestCases <= 0)//number should be greater than 0.
+                {System.out.println("Not a valid number");
+                }
+                else
+                {
+
+                        while (numTestCases > 0) 
+                        {
+
+                                String word = input.next();
+                                char[] wArr = word.toCharArray();
+                                int change = 0;
+                                int left = word.length() - 1;
+                                int middle = wArr.length / 2;
+                                for(int right = 0; right < middle; right++, left--)
+                                {
+                                    change  += Math.abs((int)(wArr[right] - wArr[left]));
+                                }
+
+                                System.out.println("It need "+change+" steps to make palindrome for the word "+ word+ ".");
+
+                                --numTestCases;
+                        }  
+                }
+    }
+}
