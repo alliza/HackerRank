@@ -1,0 +1,10 @@
+int countXX(String s){
+  int count = 0;
+  for(int i = 0; i < s.length(); i++){
+    Stirng s1 = s.substring(i, i+ 2);
+    if(s1.compareTo("xx") == 0){
+    count += 1;
+    }
+  }
+  return count;
+}
